@@ -26,7 +26,7 @@ spec:
         - name: pesim-config
           mountPath: /config
       volumes:
-      - name: pesim-config
+      - name: upcf-pesim-config
         configMap:
           # Provide the name of the ConfigMap containing the files you want
           # to add to the container
