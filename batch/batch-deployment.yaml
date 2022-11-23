@@ -1,43 +1,43 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: CronJob
 metadata:
-  name: upcf
+  name: batch
 spec:
-  replicas: 1
-  revisionHistoryLimit: 3
-  selector:
-    matchLabels:
-      app: upcf
-  template:
+  schedule: "0 * * * *"
+  jobTemplate:
     metadata:
       labels:
-        app: upcf
+        app: batch
     spec:
-      containers:
-      - image: camel.uangel.com:5000/upcf:latest
-        name: upcf
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 443
-        env:
-        - name: CONFIG_DIR
-          value: "/config"  
-        - name: UPCF_CONFIG_FILE
-          value: "/config/application.conf"
-        - name: UPCF_DB_HOST_PORT
-          value: "192.168.3.30"
-        - name: UPCF_DB_USER
-          value: "upcf"
-        - name: UPCF_DB_PASSWORD
-          value: "upcf.123!"
-        - name: UPCF_REDIS_DB_HOST_PORT
-          value: "192.168.3.30:6379"      
-        volumeMounts:
-        - name: upcf-config
-          mountPath: /config
-      volumes:
-      - name: upcf-config
-        configMap:
-          # Provide the name of the ConfigMap containing the files you want
-          # to add to the container
-          name: upcf-config
+      template: 
+        spec:
+          containers:
+          - image: camel.uangel.com:5000/uocf-batch:latest
+            name: batch
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c 
+            - batch
+            env:
+            - name: CONFIG_DIR
+              value: "/config"  
+            - name: UPCF_BATCH_CONFIG_FILE
+              value: "/config/application.conf"
+            - name: UPCF_DB_HOST_PORT
+              value: "192.168.3.30"
+            - name: UPCF_DB_USER
+              value: "upcf"
+            - name: UPCF_DB_PASSWORD
+              value: "upcf.123!"
+            - name: UPCF_REDIS_DB_HOST_PORT
+              value: "192.168.3.30:6379"      
+            volumeMounts:
+            - name: batch-config
+              mountPath: /config
+          volumes:
+          - name: batch-config
+            configMap:
+              # Provide the name of the ConfigMap containing the files you want
+              # to add to the container
+              name: batch-config
