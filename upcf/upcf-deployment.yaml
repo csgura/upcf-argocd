@@ -30,7 +30,7 @@ spec:
           value: "upcf"
         - name: UPCF_DB_PASSWORD
           value: "upcf.123!"
-         - name: UPCF_REDIS_DB_HOST_PORT
+        - name: UPCF_REDIS_DB_HOST_PORT
           value: "192.168.3.30:6379"      
         volumeMounts:
         - name: upcf-config
