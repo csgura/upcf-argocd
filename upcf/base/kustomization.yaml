@@ -19,3 +19,9 @@ configMapGenerator:
 - name: upcf-env
   envs:
   - app.env
+
+secretGenerator:
+- name: mysql-creds
+  literals:
+  - username=upcf
+  - password=upcf.123!

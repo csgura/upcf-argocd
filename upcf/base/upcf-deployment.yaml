@@ -22,6 +22,17 @@ spec:
         envFrom:
         - configMapRef:
             name: upcf-env
+        env:
+          - name: UPCF_DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: mysql-creds
+                key: username
+          - name: UPCF_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-creds
+                key: password
         volumeMounts:
         - name: upcf-config
           mountPath: /config
