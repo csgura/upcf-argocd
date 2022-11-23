@@ -16,6 +16,7 @@ spec:
       containers:
       - image: upcf-pesim:latest
         name: pesim
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
         env:
