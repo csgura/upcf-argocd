@@ -12,6 +12,7 @@ configMapGenerator:
   files:
   - application.conf
   - logger.conf
+  - jaegertrace.yaml  
   - certs/camel_git_cert.pem
   - certs/unrf_cert.pem
   - certs/unrf_key.pem
