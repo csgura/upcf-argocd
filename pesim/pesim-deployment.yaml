@@ -22,6 +22,9 @@ spec:
         env:
         - name: UPCF_PESIM_CONFIG_FILE
           value: "/config/application.conf"
+        volumeMounts:
+        - name: pesim-config
+          mountPath: /config
       volumes:
       - name: pesim-config
         configMap:
