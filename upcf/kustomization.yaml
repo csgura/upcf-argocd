@@ -1,0 +1,17 @@
+namePrefix: upcf-
+
+resources:
+- upcf-deployment.yaml
+- upcf-svc.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+configMapGenerator:
+- name: upcf-config
+  files:
+  - application.conf
+  - logger.conf
+  - certs/camel_git_cert.pem
+  - certs/unrf_cert.pem
+  - certs/unrf_key.pem
