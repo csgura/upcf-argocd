@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pesim
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: pesim
+  template:
+    metadata:
+      labels:
+        app: pesim
+    spec:
+      containers:
+      - image: csgura/upcf-pesim:latest
+        name: pesim
+        ports:
+        - containerPort: 80
+        env:
+        - name: UPCF_PESIM_CONFIG_FILE
+          value: "/config/application.conf"
+      volumes:
+      - name: pesim-config
+        configMap:
+          # Provide the name of the ConfigMap containing the files you want
+          # to add to the container
+          name: config
