@@ -1,0 +1,13 @@
+{
+	"supi": "imsi-450050100001234", 
+	"pduSessionId": 100, 
+	"pduSessionType": "IPV4", 
+	"dnn": "hello", 
+	"notificationUri": "world", 
+	"sliceInfo": {
+		"sst": 100, 
+		"sd": "000000"
+	},
+	"smfId":"3fa85f64-5717-4562-b3fc-2c963f66afa6", 
+	"recoveryTime": "2022-09-22T23:59:59+09:00"
+}

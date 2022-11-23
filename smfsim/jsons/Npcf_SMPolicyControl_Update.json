@@ -1,0 +1,10 @@
+{
+    "repPolicyCtrlReqTriggers": ["RAT_TY_CH", "SUCC_RES_ALLO"], 
+    "ratType": "LTE_M",
+    "ruleReports": [
+        {
+          "pccRuleIds": ["p1", "p2"], 
+          "ruleStatus": "ACTIVE"
+        }
+    ]
+}

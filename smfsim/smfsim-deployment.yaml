@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smfsim
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: smfsim
+  template:
+    metadata:
+      labels:
+        app: smfsim
+    spec:
+      containers:
+      - image: camel.uangel.com:5000/upcf-smfsim:latest
+        name: smfsim
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 443
+        env:
+        - name: UPCF_SMFSIM_CONFIG_FILE
+          value: "/config/application.conf"        
+        - name: CONFIG_DIR
+          value: "/config"
+        volumeMounts:
+        - name: smfsim-config
+          mountPath: /config
+        - name: smfsim-json-config
+          mountPath: /config/resources/jsons          
+      volumes:
+      - name: smfsim-config
+        configMap:
+          name: smfsim-config
+      - name: smfsim-json-config
+        configMap:
+          name: smfsim-json-config          

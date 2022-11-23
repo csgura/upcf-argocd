@@ -1,0 +1,24 @@
+namePrefix: upcf-
+
+resources:
+- smfsim-deployment.yaml
+- smfsim-svc.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+configMapGenerator:
+- name: smfsim-config
+  files:
+  - application.conf
+  - logger.conf
+  - jaegertrace.yaml  
+  - certs/camel_git_cert.pem
+  - certs/unrf_cert.pem
+  - certs/unrf_key.pem
+
+- name: smfsim-json-config
+  files:
+  - jsons/Npcf_SMPolicyControl_Create.json
+  - jsons/Npcf_SMPolicyControl_Delete.json
+  - jsons/Npcf_SMPolicyControl_Update.json
