@@ -22,12 +22,12 @@ spec:
         env:
         - name: UPCF_UDRSIM_CONFIG_FILE
           value: "/config/application.conf"
+        - name: CONFIG_DIR
+          value: "/config"
         volumeMounts:
         - name: udrsim-config
           mountPath: /config
       volumes:
       - name: udrsim-config
         configMap:
-          # Provide the name of the ConfigMap containing the files you want
-          # to add to the container
           name: udrsim-config

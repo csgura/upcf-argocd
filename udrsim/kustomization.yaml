@@ -12,3 +12,6 @@ configMapGenerator:
   files:
   - application.conf
   - logger.conf
+  - certs/camel.uangel.com/camel_git_cert.pem
+  - certs/unrf.localhost.uangel.com/cert.pem
+  - certs/unrf.localhost.uangel.com/key.pem

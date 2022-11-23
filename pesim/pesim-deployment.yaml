@@ -22,12 +22,12 @@ spec:
         env:
         - name: UPCF_PESIM_CONFIG_FILE
           value: "/config/application.conf"
+        - name: CONFIG_DIR
+          value: "/config"
         volumeMounts:
         - name: pesim-config
           mountPath: /config
       volumes:
       - name: pesim-config
         configMap:
-          # Provide the name of the ConfigMap containing the files you want
-          # to add to the container
           name: pesim-config
