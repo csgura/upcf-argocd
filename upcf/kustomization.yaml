@@ -16,3 +16,6 @@ configMapGenerator:
   - certs/camel_git_cert.pem
   - certs/unrf_cert.pem
   - certs/unrf_key.pem
+- name: upcf-env
+  envs:
+  - app.env

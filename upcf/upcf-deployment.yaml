@@ -19,19 +19,9 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 443
-        env:
-        - name: CONFIG_DIR
-          value: "/config"  
-        - name: UPCF_CONFIG_FILE
-          value: "/config/application.conf"
-        - name: UPCF_DB_HOST_PORT
-          value: "192.168.3.30"
-        - name: UPCF_DB_USER
-          value: "upcf"
-        - name: UPCF_DB_PASSWORD
-          value: "upcf.123!"
-        - name: UPCF_REDIS_DB_HOST_PORT
-          value: "192.168.3.30:6379"      
+        envFrom:
+        - configMapRef:
+            name: upcf-env
         volumeMounts:
         - name: upcf-config
           mountPath: /config
