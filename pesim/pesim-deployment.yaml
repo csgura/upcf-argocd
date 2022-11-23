@@ -14,9 +14,9 @@ spec:
         app: pesim
     spec:
       containers:
-      - image: upcf-pesim:latest
+      - image: camel.uangel.com:5000/upcf-pesim:latest
         name: pesim
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         env:
