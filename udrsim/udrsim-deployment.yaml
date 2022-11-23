@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udrsim
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: udrsim
+  template:
+    metadata:
+      labels:
+        app: udrsim
+    spec:
+      containers:
+      - image: camel.uangel.com:5000/upcf-udrsim:latest
+        name: udrsim
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 443
+        env:
+        - name: UPCF_UDRSIM_CONFIG_FILE
+          value: "/config/application.conf"
+        volumeMounts:
+        - name: udrsim-config
+          mountPath: /config
+      volumes:
+      - name: udrsim-config
+        configMap:
+          # Provide the name of the ConfigMap containing the files you want
+          # to add to the container
+          name: udrsim-config

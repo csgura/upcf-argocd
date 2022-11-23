@@ -1,14 +1,14 @@
 namePrefix: upcf-
 
 resources:
-- pesim-deployment.yaml
-- pesim-svc.yaml
+- udrsim-deployment.yaml
+- udrsim-svc.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 
 configMapGenerator:
-- name: pesim-config
+- name: udrsim-config
   files:
   - application.conf
   - logger.conf
