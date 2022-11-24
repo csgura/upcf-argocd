@@ -11,3 +11,12 @@ configMapGenerator:
   files:
   - application.conf
   - logger.conf
+- name: batch-env
+  envs:
+  - app.env
+
+secretGenerator:
+- name: mysql-creds
+  literals:
+  - username=upcf
+  - password=upcf.123!
