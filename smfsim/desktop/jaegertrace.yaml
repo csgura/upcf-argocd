@@ -19,7 +19,7 @@ traceList:
     - ""
 
 tracingHosts:
-  - uangel.com
+  - cluster.local
 
 # true/false
 logHttpBody: true
