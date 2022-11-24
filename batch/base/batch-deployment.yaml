@@ -12,7 +12,7 @@ spec:
       template: 
         spec:
           containers:
-          - image: camel.uangel.com:5000/uocf-batch:latest
+          - image: camel.uangel.com:5000/upcf-batch:latest
             name: batch
             imagePullPolicy: IfNotPresent
             command:
