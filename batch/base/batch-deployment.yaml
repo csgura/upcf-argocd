@@ -15,10 +15,6 @@ spec:
           - image: camel.uangel.com:5000/upcf-batch:latest
             name: batch
             imagePullPolicy: IfNotPresent
-            command:
-            - "bash"
-            - "-c" 
-            - "/app/batch"
             envFrom:
             - configMapRef:
                 name: batch-env
