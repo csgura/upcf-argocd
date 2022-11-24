@@ -16,9 +16,9 @@ spec:
             name: batch
             imagePullPolicy: IfNotPresent
             command:
-            - /bin/sh
-            - -c 
-            - batch
+            - "bash"
+            - "-c" 
+            - "/app/batch"
             envFrom:
             - configMapRef:
                 name: batch-env
