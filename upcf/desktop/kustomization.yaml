@@ -5,6 +5,10 @@ bases:
 - ../base
 
 configMapGenerator:
+  - name: upcf-config
+    behavior: merge
+    files:
+    - jaegertrace.yaml  
   - name: upcf-env
     behavior: merge
     envs:
