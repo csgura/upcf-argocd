@@ -39,7 +39,7 @@ reporter:
   queueSize:
   bufferFlushInterval: 10s
   logSpans: true
-  localAgentHostPort: "192.168.3.30:6831"
+  localAgentHostPort: "127.0.0.1:6831"
   collectorEndpoint:
 
 headers:
