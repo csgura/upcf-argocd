@@ -35,6 +35,7 @@ spec:
             volumeMounts:
             - name: batch-config
               mountPath: /config
+          restartPolicy: OnFailure
           volumes:
           - name: batch-config
             configMap:
