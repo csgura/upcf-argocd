@@ -39,8 +39,7 @@ reporter:
   queueSize:
   bufferFlushInterval: 10s
   logSpans: true
-  localAgentHostPort: "host.docker.internal:6831"
-  collectorEndpoint:
+  collectorEndpoint: http://host.docker.internal:14268/api/traces
 
 headers:
 
