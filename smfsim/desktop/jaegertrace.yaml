@@ -9,14 +9,14 @@ rpc_metrics: false
 level: info
 
 # trace mode. all/traceList
-mode: traceList
+mode: all
 
 traceList:
   subs_id:
     - hello
     - world
   target:
-    - localhost
+    - ""
 
 tracingHosts:
   - uangel.com
