@@ -35,9 +35,9 @@ spec:
                 key: password
         volumeMounts:
         - name: upcf-config
-          mountPath: /config
+          mountPath: /app/config
         - name: upcf-log
-          mountPath: /log
+          mountPath: /app/log
       volumes: 
       - name: upcf-config
         configMap:
