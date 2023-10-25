@@ -44,3 +44,5 @@ spec:
           # Provide the name of the ConfigMap containing the files you want
           # to add to the container
           name: upcf-config
+      - name: upcf-log
+        emptyDir: {}
