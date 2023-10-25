@@ -36,6 +36,8 @@ spec:
         volumeMounts:
         - name: upcf-config
           mountPath: /config
+        - name: upcf-log
+          mountPath: /log
       volumes: 
       - name: upcf-config
         configMap:
