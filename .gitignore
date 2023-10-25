@@ -1,0 +1,40 @@
+# ��� ���� gitignore �� �߰�
+*
+ 
+# ������ Ȯ���ڰ� �ִ� ������ ����, �տ� ! �� �־��
+!*.*
+ 
+ 
+# ���丮�� ����
+!*/
+ 
+# .log ���� ����
+*.log
+
+cmd/upcf/stats
+ 
+# vim swp ���� ����
+.*.swp
+ 
+# exe ���� ����
+*.exe
+ 
+# ��Ÿ ���ϵ�
+*.gv
+*.pdf
+ 
+# mac�� ��� .DS_Store ����
+.DS_Store
+**/.DS_Store
+ 
+# VS code �� ide ���� ���� ����
+**/debug.test
+settings.json
+.vscode
+.idea
+*.csv
+*.csv.prev
+traces/
+*.out
+*.html
+*.bak

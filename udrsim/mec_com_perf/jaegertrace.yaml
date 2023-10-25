@@ -1,0 +1,54 @@
+# service name to use on the tracer
+serviceName: UDR
+
+disabled: false
+
+rpc_metrics: false
+
+# trace level. panic/fatal/error/warn/info/debug
+level: info
+
+# trace mode. all/traceList
+mode: all
+
+traceList:
+  subs_id:
+    - hello
+    - world
+  target:
+    - ""
+
+tracingHosts:
+  - cluster.local
+
+# true/false
+logHttpBody: true
+
+#tags:
+#  - key:
+#    value:
+
+sampler:
+  type: const
+  param: 1.0
+  samplingServerURL:
+  maxOperations:
+  samplingRefreshInterval:
+
+reporter:
+  queueSize:
+  bufferFlushInterval: 10s
+  logSpans: true
+  collectorEndpoint: jaeger-agent.uccf.svc.cluster.local:6831
+
+headers:
+
+baggage_restrictions:
+  denyBaggageOnInitializationFailure: # true/false
+  hostPort:	# string
+  refreshInterval:	#time.duration
+
+throttler:
+  hostPort:
+  refreshInterval:
+  synchronousInitialization:
