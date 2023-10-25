@@ -13,4 +13,4 @@ configMapGenerator:
   - name: upcf-env
     behavior: merge
     envs:
-    - desktop.env   
+    - mec_com.env   
