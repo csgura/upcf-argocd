@@ -34,11 +34,11 @@ spec:
                 name: mysql-creds
                 key: password
         volumeMounts:
-        - name: upcf-config
-          mountPath: /config
         - name: upcf-log
           mountPath: /log 
-      volumes:
+        - name: upcf-config
+          mountPath: /config
+      volumes: 
       - name: upcf-config
         configMap:
           # Provide the name of the ConfigMap containing the files you want
