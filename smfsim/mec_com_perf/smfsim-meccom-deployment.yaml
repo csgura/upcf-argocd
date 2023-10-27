@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smfsim
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: smfsim
+  template:
+    metadata:
+      labels:
+        app: smfsim
+    spec:
+      containers:
+      - name: smfsim 
+        args: ["-cps 100"]

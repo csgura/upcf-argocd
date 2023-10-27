@@ -14,8 +14,8 @@ spec:
         app: smfsim
     spec:
       containers:
-      - image: camel.uangel.com:5000/upcf-smfsim:latest
-        name: smfsim
+      - name: smfsim 
+        image: camel.uangel.com:5000/upcf-smfsim:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
