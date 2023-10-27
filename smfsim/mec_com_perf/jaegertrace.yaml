@@ -1,54 +1,16 @@
-# service name to use on the tracer
 serviceName: SMF
-
+baggage_restrictions: {}
 disabled: false
-
-rpc_metrics: false
-
-# trace level. panic/fatal/error/warn/info/debug
-level: info
-
-# trace mode. all/traceList
-mode: all
-
-traceList:
-  subs_id:
-    - hello
-    - world
-  target:
-    - ""
-
-tracingHosts:
-  - cluster.local
-
-# true/false
+headers: null
+level: debug
 logHttpBody: true
-
-#tags:
-#  - key:
-#    value:
-
-sampler:
-  type: const
-  param: 1.0
-  samplingServerURL:
-  maxOperations:
-  samplingRefreshInterval:
-
+mode: all
 reporter:
-  queueSize:
   bufferFlushInterval: 10s
+  localAgentHostPort: jaeger-agent.uccf.svc.cluster.local:6831
   logSpans: true
-  collectorEndpoint: jaeger-agent.uccf.svc.cluster.local:6831
-
-headers:
-
-baggage_restrictions:
-  denyBaggageOnInitializationFailure: # true/false
-  hostPort:	# string
-  refreshInterval:	#time.duration
-
-throttler:
-  hostPort:
-  refreshInterval:
-  synchronousInitialization:
+rpc_metrics: false
+sampler:
+  param: 1
+  type: const
+throttler: {}
