@@ -29,10 +29,14 @@ spec:
           mountPath: /config
         - name: smfsim-json-config
           mountPath: /config/resources/jsons          
+        - name: smfsim-log
+          mountPath: /app/log
       volumes:
       - name: smfsim-config
         configMap:
           name: smfsim-config
       - name: smfsim-json-config
         configMap:
-          name: smfsim-json-config          
+          name: smfsim-json-config
+      - name: smfsim-log
+        emptyDir: {}
