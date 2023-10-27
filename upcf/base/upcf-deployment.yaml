@@ -14,11 +14,18 @@ spec:
         app: upcf
     spec:
       containers:
-      - image: camel.uangel.com:5000/upcf:latest
-        name: upcf
+      - name: upcf
+        image: camel.uangel.com:5000/upcf:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 443
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: "1"
+            memory: 512Mi        
         envFrom:
         - configMapRef:
             name: upcf-env
@@ -38,6 +45,7 @@ spec:
           mountPath: /app/config
         - name: upcf-log
           mountPath: /app/log
+          
       volumes: 
       - name: upcf-config
         configMap:
