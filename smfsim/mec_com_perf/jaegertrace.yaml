@@ -11,6 +11,6 @@ reporter:
   logSpans: true
 rpc_metrics: false
 sampler:
-  param: 0.01
+  param: 0.001
   type: probabilistic
 throttler: {}
