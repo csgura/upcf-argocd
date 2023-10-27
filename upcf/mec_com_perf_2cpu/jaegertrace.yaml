@@ -1,0 +1,16 @@
+serviceName: PCF
+baggage_restrictions: {}
+disabled: false
+headers: null
+level: debug
+logHttpBody: true
+mode: all
+reporter:
+  bufferFlushInterval: 10s
+  localAgentHostPort: jaeger-agent.uccf.svc.cluster.local:6831
+  logSpans: true
+rpc_metrics: false
+sampler:
+  param: 1
+  type: const
+throttler: {}

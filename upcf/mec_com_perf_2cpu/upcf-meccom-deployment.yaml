@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: upcf
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: upcf
+  template:
+    metadata:
+      labels:
+        app: upcf
+    spec:
+      containers:
+      - name: upcf
+        image: camel.uangel.com:5000/upcf:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 443
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: "2"
+            memory: 512Mi     
