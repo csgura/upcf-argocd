@@ -16,4 +16,4 @@ spec:
       containers:
       - name: smfsim 
         command: ["/app/smpperf"]
-        args: ["-cps", "700"]
+        args: ["-cps", "650"]
