@@ -18,7 +18,7 @@ spec:
         image: camel.uangel.com:5000/upcf:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 443
+        - containerPort: 8000
         resources:
           limits:
             cpu: "4"

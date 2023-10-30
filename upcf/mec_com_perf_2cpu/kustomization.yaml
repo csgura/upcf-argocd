@@ -13,6 +13,7 @@ configMapGenerator:
     files:
     - jaegertrace.yaml 
     - logger.conf 
+    - application.conf
   - name: upcf-env
     behavior: merge
     envs:
