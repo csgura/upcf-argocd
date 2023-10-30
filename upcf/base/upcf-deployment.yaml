@@ -45,6 +45,8 @@ spec:
           mountPath: /app/config
         - name: upcf-log
           mountPath: /app/log
+        - name: upcf-stat
+          mountPath: /app/stats          
           
       volumes: 
       - name: upcf-config
@@ -54,3 +56,5 @@ spec:
           name: upcf-config
       - name: upcf-log
         emptyDir: {}
+      - name: upcf-stat
+        emptyDir: {}        
